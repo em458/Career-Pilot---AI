@@ -2,13 +2,13 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { AuthProvider } from '@/context/auth-context';
+import { Providers } from './providers';
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'] });
 
 export const metadata: Metadata = {
   title: 'CareerPilot AI - Получите работу мечты с AI-инструментами',
-  description: 'AI-анализ резюме, подбор вакансий и генерация сопроводительных писем. Получите ATS-оценку, адаптированное резюме и персональную стратегию поиска работы.',
+  description: 'AI-анализ резюме, подбор вакансий и генерация сопроводительных писем.',
 };
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="ru" suppressHydrationWarning>
       <body className={inter.className}>
-        <AuthProvider>{children}</AuthProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
